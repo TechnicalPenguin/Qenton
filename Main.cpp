@@ -9,6 +9,7 @@ int cz = -45;
 
 void keyboard(unsigned char key, int x, int y)
 {
+	cout << "Keyboard functioning loaded" << endl;
 	if (key == 'w') { cz += 1; }
 	if (key == 's') { cz -= 1; }
 	if (key == 'a') { cx += 1; }
@@ -20,9 +21,8 @@ void keyboard(unsigned char key, int x, int y)
 }
 void theCube()
 {
-	glColor3f(1,1,1);
-	glutSolidCube(0.4);
-	
+	glColor4f(255,0,0,.5);
+	glutSolidCube(1);
 }
 void drawGrid()
 {
@@ -39,20 +39,24 @@ void drawGrid()
 		glEnd();
 		glPopMatrix();
 	}
+	cout << "Grid loaded" << endl;
+
 }
 void display()
 {
 	glPushMatrix();
-
+	glEnable(GL_LIGHT1);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 	glLoadIdentity();
 	glTranslatef(cx, cy, cz);
 	glRotatef(40, 1, 1, 0);
-	drawGrid();
 	theCube();
+	drawGrid();
 	glutSwapBuffers();
 	glPopMatrix();
+	cout << "Display loaded" << endl;
+
 }
 void init()
 {
@@ -61,18 +65,23 @@ void init()
 	gluPerspective(35, 1.0f, 0.1f, 1000);
 	glMatrixMode(GL_MODELVIEW);
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_COLOR_MATERIAL);
 	glClearColor(0.1, 0.1, 0.1, 1);
+	cout << "OPENGL Instalized" << endl;
+
 }
 
 int main(int argc, char **argv)
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE);
-	glutInitWindowSize(800, 600);
+	glutInitWindowSize(GLUT_SCREEN_WIDTH, GLUT_SCREEN_HEIGHT);
 	glutCreateWindow("Qenton"); 
 	glutKeyboardFunc(keyboard);
 	init();
 	glutDisplayFunc(display);
 	glutMainLoop();
+	cout << "Main looping started" << endl;
+
 	return 0;
 }

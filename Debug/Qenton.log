@@ -1,0 +1,10 @@
+﻿  Main.cpp
+D:\Desktop\Quenton\Qenton\Main.cpp(33,36): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Desktop\Quenton\Qenton\Main.cpp(34,33): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Desktop\Quenton\Qenton\Main.cpp(38,24): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\Desktop\Quenton\Qenton\Main.cpp(38,48): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\Desktop\Quenton\Qenton\Main.cpp(50,23): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Desktop\Quenton\Qenton\Main.cpp(50,19): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Desktop\Quenton\Qenton\Main.cpp(50,15): warning C4244: 'argument': conversion from 'int' to 'GLfloat', possible loss of data
+D:\Desktop\Quenton\Qenton\Main.cpp(64,31): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+  Qenton.vcxproj -> D:\Desktop\Quenton\Qenton\Debug\Qenton.exe

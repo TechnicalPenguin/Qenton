@@ -1,6 +1,5 @@
 #include <iostream>
 #include <GL/glut.h>
-#include "gui.h"
 
 using namespace std;
 
@@ -8,10 +7,6 @@ int cx = -13;
 int cy = 0;
 int cz = -45;
 
-void draw_UI()
-{
-	create_menu();
-}
 
 void keyboard(unsigned char key, int x, int y)
 {
@@ -57,8 +52,7 @@ void display()
 	glLoadIdentity();
 	glTranslatef(cx, cy, cz);
 	glRotatef(40, 1, 1, 0);
-	draw_UI();
-	theCube();
+	//theCube();
 	drawGrid();
 	glutSwapBuffers();
 	glPopMatrix();

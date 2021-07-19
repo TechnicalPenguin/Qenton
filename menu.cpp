@@ -3,6 +3,7 @@
 #include <iostream>
 #include <GL/glut.h>
 #include <stdio.h>
+#include "gui.h"
 
 class menu_class
 {

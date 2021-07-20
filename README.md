@@ -1,10 +1,10 @@
 # Keybinds
-`w` Move forward
-`s` Move backward
-`a` Move left
-`d` Move right
-
-`q` Move up
-`z` Move down
-
-`c` Toggle/Untoggle wireframe mode
+`w` Move forward <br>
+`s` Move backward<br>
+`a` Move left<br>
+`d` Move right<br>
+<br>
+`q` Move up<br>
+`z` Move down<br>
+<br>
+`c` Toggle/Untoggle wireframe mode<br>

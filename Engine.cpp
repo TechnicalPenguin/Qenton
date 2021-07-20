@@ -20,5 +20,10 @@ namespace FO3D
 		glfwWindowHint(GLFW_REFRESH_RATE, monitor.refreshRate);
 
 
+		// CREATE WINDOW
+		window = glfwCreateWindow(videoWidth, videoHeight, "FO3D", NULL, NULL);
+		assert(window && "ERROR::GFLW::FAILED TO CREATE WINDOW");
+		glfwMakeContextCurrent(window);
+
 	}
 }

@@ -8,9 +8,13 @@ namespace FO3D
 		glfwInit();
 		//WINDOW HINTS
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
-
 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+
+		auto& monitor = *glfwGetVideoMode(glfwGetPrimaryMonitor());
+
+
+
+
 	}
 }

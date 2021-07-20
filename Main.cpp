@@ -6,7 +6,7 @@ using namespace std;
 int cx = -13;
 int cy = 0;
 int cz = -45;
-
+bool isWireframeEnabled = false;
 
 void keyboard(unsigned char key, int x, int y)
 {
@@ -18,9 +18,20 @@ void keyboard(unsigned char key, int x, int y)
 	if (key == 'q') { cy -= 1; }
 	if (key == 'z') { cy += 1; }
 
+	if (isWireframeEnabled == true && key == 'c')
+	{
+		isWireframeEnabled = false;
+	}
+	else if (isWireframeEnabled == false && key == 'c')
+	{
+		isWireframeEnabled = true;
+
+	}
+	if (key == 'z') { cy += 1; }
+
 	glutPostRedisplay();
 }
-void theCube()
+void drawDefaults()
 {
 	glColor4f(255,0,0,.5);
 	glutSolidCube(1);
@@ -35,7 +46,7 @@ void drawGrid()
 		if (i >= 20) { glTranslatef(i - 20, 0, 0); glRotatef(-90, 0, 1, 0); }
 
 		glBegin(GL_LINES);
-		glColor3f(1, 1, 1); glLineWidth(1);
+		glColor4f(255, 0, 0, 0); glLineWidth(1);
 		glVertex3f(0, -0.1, 0); glVertex3f(19, -0.1,0);
 		glEnd();
 		glPopMatrix();
@@ -52,7 +63,15 @@ void display()
 	glLoadIdentity();
 	glTranslatef(cx, cy, cz);
 	glRotatef(40, 1, 1, 0);
-	//theCube();
+	if (isWireframeEnabled == true) {
+		glPolygonMode(GL_FRONT, GL_LINE);
+		glPolygonMode(GL_BACK, GL_LINE);
+	}
+	else {
+		glPolygonMode(GL_FRONT, GL_FILL);
+		glPolygonMode(GL_BACK, GL_FILL);
+	}
+	drawDefaults();
 	drawGrid();
 	glutSwapBuffers();
 	glPopMatrix();
@@ -71,13 +90,22 @@ void init()
 	cout << "OPENGL Instalized" << endl;
 
 }
+void reshape(int width, int height) {
+	glViewport(0, 0, (GLsizei)width, (GLsizei)height);
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();
+	gluPerspective(0, (GLfloat)width / (GLfloat)height, 1.0, 100.0);
+	glMatrixMode(GL_MODELVIEW);
+}
 
 int main(int argc, char **argv)
 {
+	glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE);
-	glutInitWindowSize(GLUT_SCREEN_WIDTH, GLUT_SCREEN_HEIGHT);
-	glutCreateWindow("Qenton"); 
+	glutInitWindowSize(800, 800);
+	glutReshapeFunc(reshape);
+	glutCreateWindow("Qenton");
 	glutKeyboardFunc(keyboard);
 	init();
 	glutDisplayFunc(display);

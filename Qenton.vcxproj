@@ -98,7 +98,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Desktop\Quenton\Qenton\Libraries\Includes\GLM\glm;D:\Desktop\Quenton\Qenton\Libraries\Includes\GLFW\include;D:\Desktop\Quenton\Qenton\Libraries\Includes\GLEW\include;D:\Desktop\Quenton\Qenton\Libraries\Includes\ASSIMP;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)_${PlatformTarget}.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
@@ -132,7 +132,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>D:\Desktop\Quenton\Qenton\Libraries\Includes\GLM\glm;D:\Desktop\Quenton\Qenton\Libraries\Includes\GLFW\include;D:\Desktop\Quenton\Qenton\Libraries\Includes\GLEW\include;D:\Desktop\Quenton\Qenton\Libraries\Includes\ASSIMP;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>Create</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)$(TargetName)_${PlatformTarget}.pch</PrecompiledHeaderOutputFile>
     </ClCompile>

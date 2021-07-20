@@ -11,10 +11,12 @@ namespace FO3D {
 	{
 	public: 
 		Engine();
+		Engine(const Engine&) = delete;
 		~Engine();
 
 		static Engine& Ref() {
-
+			static Engine refference;
+			return refference;
 		}
 
 		void Quit();
@@ -33,6 +35,6 @@ namespace FO3D {
 		float videoWidth, videoHeight;
 	};
 
-		static Engine Core = Engine::Ref();
+	static Engine& Core = Engine::Ref();
 	};
 

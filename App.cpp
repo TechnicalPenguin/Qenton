@@ -3,11 +3,13 @@
 
 int main(int argc, char** argv)
 {
-	FO3D::Core.Initialize();
+//	FO3D::Engine::Ref().Initalize();
 
-	while (FO3D::Core.Run())
-	{
-		FO3D::Core.Update();
-	}
+	//FO3D::Core.Insitialize();
+
+	//while (FO3D::Core.Run())
+	//{
+	//	FO3D::Core.Update();
+	//}
 	return 0;
 }

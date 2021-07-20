@@ -11,6 +11,7 @@ namespace FO3D
 		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
 		glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
+		// DISPLAY MONITOR
 		auto& monitor = *glfwGetVideoMode(glfwGetPrimaryMonitor());
 
 		// BIT COLOURING
@@ -24,6 +25,11 @@ namespace FO3D
 		window = glfwCreateWindow(videoWidth, videoHeight, "FO3D", NULL, NULL);
 		assert(window && "ERROR::GFLW::FAILED TO CREATE WINDOW");
 		glfwMakeContextCurrent(window);
+
+
+		// INIT 
+		assert(glewInit() == GLEW_OK && "ERROR::GLEW::INIT FAILED");
+		glewExperimental = GL_TRUE;
 
 	}
 }

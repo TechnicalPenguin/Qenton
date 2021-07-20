@@ -30,6 +30,23 @@ namespace FO3D
 		// INIT 
 		assert(glewInit() == GLEW_OK && "ERROR::GLEW::INIT FAILED");
 		glewExperimental = GL_TRUE;
+	}
+
+	Engine::~Engine()
+	{
+		glfwTerminate();
+	}
+
+	void Engine::Initialize()
+	{
+
+	}
+	void Engine::Update()
+	{
+
+	}
+	void Engine::Quit()
+	{
 
 	}
 }

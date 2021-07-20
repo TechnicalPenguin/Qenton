@@ -13,7 +13,11 @@ namespace FO3D
 
 		auto& monitor = *glfwGetVideoMode(glfwGetPrimaryMonitor());
 
-
+		// BIT COLOURING
+		glfwWindowHint(GLFW_RED_BITS, monitor.redBits);
+		glfwWindowHint(GLFW_BLUE_BITS, monitor.blueBits);
+		glfwWindowHint(GLFW_GREEN_BITS, monitor.greenBits);
+		glfwWindowHint(GLFW_REFRESH_RATE, monitor.refreshRate);
 
 
 	}
